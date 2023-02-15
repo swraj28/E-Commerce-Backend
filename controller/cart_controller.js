@@ -48,7 +48,11 @@ exports.add_to_cart = async (req, res) => {
     const _id=(req.params.id);
     const cart = await cart_model.findOne({_id});
     if(cart){
-      cart.items.push(req.body);
+      const data = {
+        productId: req.body.productId,
+        productQuantity: req.body.productQuantity,
+      };
+      cart.products.push(data);
       await cart.save();
       return res.status(200).json({
         success: true,

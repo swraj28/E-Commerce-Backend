@@ -4,6 +4,9 @@ const app= express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
+const authRoutes = require("./routes/auth");
+const cartRoutes = require("./routes/cart");
+
 dotenv.config();
 
 mongoose.set('strictQuery', true);
@@ -20,6 +23,11 @@ mongoose.connect(
 app.get('/',(req,res)=>{
   res.send('<h1>Welcome to HomePage</h1>')
 })
+
+app.use(express.json());
+
+app.use("/auth", authRoutes);
+app.use("/cart", cartRoutes);
 
 
 app.listen(8000, (err) => {

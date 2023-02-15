@@ -9,10 +9,10 @@ const cartProductSchema = new Schema({
     type: String,
     required: true,
   },
-},{timestamp: true});
+},{timestamps: true});
 
 const cartSchema = new Schema({
   products: [cartProductSchema],
-},{timestamp: true});
+},{timestamps: true});
 
 module.exports = mongoose.model("cart", cartSchema);

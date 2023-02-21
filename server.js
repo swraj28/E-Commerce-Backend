@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 
 const authRoutes = require("./routes/auth");
 const cartRoutes = require("./routes/cart");
+const favouriteRoutes = require("./routes/favourite");
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use(express.json());
 
 app.use("/auth", authRoutes);
 app.use("/cart", cartRoutes);
+app.use("/favourite", favouriteRoutes);
 
 
 app.listen(8000, (err) => {

@@ -37,6 +37,10 @@ const productsSchema = new Schema({
     type: Array,
     required: true,
   },
-});
+  Quantity: {
+    type: Number,
+    required: true
+  },
+},{timestamp:true});
 
 module.exports = mongoose.model("Products", productsSchema);

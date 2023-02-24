@@ -13,6 +13,6 @@ const cartProductSchema = new Schema({
 
 const cartSchema = new Schema({
   products: [cartProductSchema],
-},{timestamps: true});
+},{timestamp : true});
 
 module.exports = mongoose.model("cart", cartSchema);

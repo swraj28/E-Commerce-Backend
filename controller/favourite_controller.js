@@ -1,4 +1,5 @@
 const favourite_model= require('../model/favourite_model');
+const cart_model = require("../model/cart_model");
 
 exports.addFavourite = async (req, res) => {
   try{

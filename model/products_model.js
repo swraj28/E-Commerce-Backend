@@ -17,11 +17,11 @@ const productsSchema = new Schema({
     type: String,
     required: true,
   },
-  categary: {
+  category: {
     type: String,
     required: true,
   },
-  subCategary: {
+  subCategory: {
     type: String,
     required: true,
   },
@@ -31,7 +31,7 @@ const productsSchema = new Schema({
   },
   image: {
     type: Array,
-    required: true,
+    required: false,
   },
   size: {
     type: Array,
